@@ -31,9 +31,9 @@ const AppLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       onClick: () => router.push('/products'),
     },
     {
-      key: 'about',
-      label: 'About',
-      onClick: () => router.push('/about'),
+      key: 'attributes',
+      label: 'Attributes',
+      onClick: () => router.push('/attributes'),
     },
   ];
 
@@ -63,16 +63,22 @@ const AppLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       ],
     },
     {
-      key: 'notifications',
-      label: 'Notifications',
+      key: 'attributes',
+      label: 'Attributes',
       icon: <NotificationOutlined />,
-      onClick: () => router.push('/notifications'),
+      onClick: () => router.push('/attributes'),
     },
     {
-      key: 'profile',
-      label: 'Profile',
+      key: 'vendors',
+      label: 'Vendors',
       icon: <UserOutlined />,
-      onClick: () => router.push('/profile'),
+      onClick: () => router.push('/vendors'),
+    },
+    {
+      key: 'operators',
+      label: 'Operators',
+      icon: <UserOutlined />,
+      onClick: () => router.push('/operators'),
     },
   ];
 
