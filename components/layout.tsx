@@ -47,18 +47,28 @@ const AppLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     },
     {
       key: 'products',
-      label: 'Products',
+      label: 'Product Management',
       icon: <LaptopOutlined />,
       children: [
         {
           key: 'product-list',
           label: 'Product List',
-          onClick: () => router.push('/products'),
+          onClick: () => router.push('/products/product-information'),
         },
         {
-          key: 'add-product',
-          label: 'Add Product',
-          onClick: () => router.push('/products/add'),
+          key: 'vendor',
+          label: 'Vendor',
+          onClick: () => router.push('/products/vendors'),
+        },
+        {
+          key: 'operator',
+          label: 'Operator',
+          onClick: () => router.push('/products/operators'),
+        },
+        {
+          key: 'country',
+          label: 'Country',
+          onClick: () => router.push('/products/countries'),
         },
       ],
     },
@@ -67,19 +77,7 @@ const AppLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       label: 'Attributes',
       icon: <NotificationOutlined />,
       onClick: () => router.push('/attributes'),
-    },
-    {
-      key: 'vendors',
-      label: 'Vendors',
-      icon: <UserOutlined />,
-      onClick: () => router.push('/vendors'),
-    },
-    {
-      key: 'operators',
-      label: 'Operators',
-      icon: <UserOutlined />,
-      onClick: () => router.push('/operators'),
-    },
+    }
   ];
 
   return (

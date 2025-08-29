@@ -15,7 +15,7 @@ interface Operator {
   image: string;
 }
 
-const VendorsList = () => {
+const OperatorList = () => {
   const [operators, setOperators] = useState<Operator[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -50,14 +50,14 @@ const VendorsList = () => {
       align: 'center',
       render: (operator_code: string) => <Tag color="blue" style={{ alignItems: "center", justifyContent: "center"}}>{operator_code}</Tag>,
     },
-    {
-      title: "Code",
-      dataIndex: "code",
-      key: "code",
-      width: 60,
-      align: 'center',
-      render: (code: string) => <Tag color="blue">{code}</Tag>,
-    },
+    // {
+    //   title: "Code",
+    //   dataIndex: "code",
+    //   key: "code",
+    //   width: 60,
+    //   align: 'center',
+    //   render: (code: string) => <Tag color="blue">{code}</Tag>,
+    // },
     {
       title: "Operator Name",
       dataIndex: "operator_name",
@@ -65,6 +65,14 @@ const VendorsList = () => {
       width: 100,
       align: 'center',
       render: (operator_name: string) => <Tag color="blue">{operator_name}</Tag>,
+    },
+    {
+      title: "Country Code",
+      dataIndex: "country_code",
+      key: "country_code",
+      width: 100,
+      align: 'center',
+      render: (country_code: string) => <Tag color="blue">{country_code}</Tag>,
     }
   ];
 
@@ -95,7 +103,7 @@ const VendorsList = () => {
       <Table
         columns={columns}
         dataSource={operators}
-        rowKey="vendor_code"
+        rowKey="operator_code"
         pagination={{
           pageSize: 10,
           showSizeChanger: true,
@@ -110,4 +118,4 @@ const VendorsList = () => {
   );
 };
 
-export default VendorsList;
+export default OperatorList;
