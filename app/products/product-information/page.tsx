@@ -3,6 +3,10 @@
 import React, { useEffect, useState } from "react";
 import { Table, Typography, Spin, Alert, Image, Tag } from "antd";
 import type { ColumnsType } from "antd/es/table";
+import CreateButton from "@/components/create_button";
+// import dotenv from "dotenv";
+// dotenv.config();
+
 
 const { Title } = Typography;
 
@@ -23,7 +27,7 @@ const ProductsList = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:8000/products"); 
+        const response = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN_URL}/products`); 
         // https://fakestoreapi.com
         if (!response.ok) {
           throw new Error("Error fetching products");
@@ -274,6 +278,9 @@ const ProductsList = () => {
   return (
     <div style={{ padding: "20px", overflowX: "scroll", overflowY: "scroll", alignItems: "center", justifyContent: "center" }}>
       <Title level={2}>Product List</Title>
+      <div style={{display: "flex", justifyContent: "flex-end"}}>
+      <CreateButton page="product-information" />
+      </div>
       <Table
         columns={columns}
         dataSource={products}

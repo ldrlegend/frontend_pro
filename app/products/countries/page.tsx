@@ -23,7 +23,7 @@ const CountryList = () => {
   useEffect(() => {
     const fetchCountries = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:8000/countries"); 
+        const response = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN_URL}/countries`); 
         // https://fakestoreapi.com
         if (!response.ok) {
           throw new Error("Error fetching countries");

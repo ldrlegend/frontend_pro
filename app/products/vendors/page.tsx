@@ -3,16 +3,17 @@
 import React, { useEffect, useState } from "react";
 import { Table, Typography, Spin, Alert, Image, Tag } from "antd";
 import type { ColumnsType } from "antd/es/table";
+import CreateButton from "@/components/create_button";
 
 const { Title } = Typography;
 
 interface Vendor {
   id: number;
   title: string;
-  description: string;
-  price: number;
-  category: string;
-  image: string;
+  // description: string;
+  // price: number;
+  // category: string;
+  // image: string;
 }
 
 const VendorsList = () => {
@@ -23,7 +24,7 @@ const VendorsList = () => {
   useEffect(() => {
     const fetchVendors = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:8000/vendors"); 
+        const response = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN_URL}/vendors`); 
         // https://fakestoreapi.com
         if (!response.ok) {
           throw new Error("Error fetching vendors");
@@ -92,6 +93,9 @@ const VendorsList = () => {
   return (
     <div style={{ padding: "20px", overflowX: "scroll", overflowY: "scroll", alignItems: "center", justifyContent: "center" }}>
       <Title level={2}>Vendor List</Title>
+      <div style={{display: "flex", justifyContent: "flex-end"}}>
+        <CreateButton page="vendors" />
+      </div>
       <Table
         columns={columns}
         dataSource={vendors}

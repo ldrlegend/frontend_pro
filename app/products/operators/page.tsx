@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { Table, Typography, Spin, Alert, Image, Tag } from "antd";
 import type { ColumnsType } from "antd/es/table";
 
+
 const { Title } = Typography;
 
 interface Operator {
@@ -23,7 +24,7 @@ const OperatorList = () => {
   useEffect(() => {
     const fetchOperators = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:8000/operators"); 
+        const response = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN_URL}/operators`); 
         // https://fakestoreapi.com
         if (!response.ok) {
           throw new Error("Error fetching operators");
