@@ -1,0 +1,9 @@
+# version: '3.9'
+
+services:
+  product_mana_fe:
+    container_name: product_mana_fe
+    image: product_mana_fe
+    build: .
+    ports:
+      - "3000:3000"
