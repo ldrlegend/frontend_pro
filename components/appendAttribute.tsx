@@ -1,7 +1,7 @@
 import React from "react";
 import { Tag } from "antd";
 import { ColumnsType } from "antd/es/table";
-import { Product } from "./ProductsList"; // Adjust this import path to your Product interface
+import { Product } from "@/types/product";
 
 // Function to generate dynamic columns based on attributes
 export const generateDynamicColumns = (products: Product[]): ColumnsType<Product> => {

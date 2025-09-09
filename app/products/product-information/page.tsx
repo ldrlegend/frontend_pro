@@ -5,21 +5,9 @@ import { Table, Typography, Spin, Alert, Tag } from "antd";
 import type { ColumnType, ColumnsType } from "antd/es/table";
 import CreateButton from "@/components/create_button";
 import { generateDynamicColumns } from "@/components/appendAttribute";
+import { Product } from "@/types/product";
 
 const { Title } = Typography;
-
-export interface Product {
-  id: number;
-  product_code: string;
-  status: string;
-  vendor_code: string;
-  operator_code: string;
-  supported_countries: string;
-  note: string;
-  date_created: string;
-  last_modified_date: string;
-  attribute?: { [key: string]: string }; // dynamic attributes (optional)
-}
 
 const ProductsList = () => {
   const [products, setProducts] = useState<Product[]>([]);

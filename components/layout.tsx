@@ -76,7 +76,18 @@ const AppLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       key: 'attributes',
       label: 'Attributes',
       icon: <NotificationOutlined />,
-      onClick: () => router.push('/attributes'),
+      children: [
+        {
+          key: 'attribute-list',
+          label: 'Attribute List',
+          onClick: () => router.push('/attributes/attribute'),
+        },
+        {
+          key: 'attribute-option',
+          label: 'Attribute Option',
+          onClick: () => router.push('/attributes/attribute_option'),
+        },
+      ],
     }
   ];
 
